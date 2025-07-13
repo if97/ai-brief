@@ -68,7 +68,7 @@ function App() {
       }`}>
         <div className="p-6 border-b relative">
           <h1 className="text-2xl font-bold text-gray-800">AI发展与应用</h1>
-          <p className="text-gray-600 mt-2">课件展示</p>
+          <p className="text-gray-600 mt-2">课件展示   （2025-07-13）</p>
         </div>
         
         <nav className="p-4">
@@ -236,11 +236,41 @@ function App() {
                           <td className="border border-gray-300 p-2">继续追加动作</td>
                         </tr>
                         <tr>
+                          <td className="border border-gray-300 p-2">3</td>
+                          <td className="border border-gray-300 p-2">回到</td>
+                          <td className="border border-gray-300 p-2">人物=小红；动作=回到…</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>
+                         <tr>
+                          <td className="border border-gray-300 p-2">4</td>
+                          <td className="border border-gray-300 p-2">家</td>
+                          <td className="border border-gray-300 p-2">场景=家；人物=小红</td>
+                          <td className="border border-gray-300 p-2">场景落定</td>
+                        </tr>                       
+                        <tr>
                           <td className="border border-gray-300 p-2">5</td>
                           <td className="border border-gray-300 p-2">她</td>
                           <td className="border border-gray-300 p-2">人物=小红(女) (复用)</td>
                           <td className="border border-gray-300 p-2">依赖隐藏状态中"小红(女)"才能正确解析"她"</td>
                         </tr>
+                         <tr>
+                          <td className="border border-gray-300 p-2">6</td>
+                          <td className="border border-gray-300 p-2">妈妈</td>
+                          <td className="border border-gray-300 p-2">人物=妈妈；关系=母女</td>
+                          <td className="border border-gray-300 p-2">角色切换，新人物加入 </td>
+                        </tr>
+                         <tr>
+                          <td className="border border-gray-300 p-2">7</td>
+                          <td className="border border-gray-300 p-2">放下</td>
+                          <td className="border border-gray-300 p-2">人物=妈妈；动作=放下…</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>
+                         <tr>
+                          <td className="border border-gray-300 p-2">8</td>
+                          <td className="border border-gray-300 p-2">手里</td>
+                          <td className="border border-gray-300 p-2">...</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>                       
                         <tr>
                           <td className="border border-gray-300 p-2">9</td>
                           <td className="border border-gray-300 p-2">苹果(手机)</td>
@@ -248,11 +278,59 @@ function App() {
                           <td className="border border-gray-300 p-2">记录正在被放下的是手机</td>
                         </tr>
                         <tr>
+                          <td className="border border-gray-300 p-2">10</td>
+                          <td className="border border-gray-300 p-2">冰箱</td>
+                          <td className="border border-gray-300 p-2">地点=冰箱</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>
+                        <tr>
+                          <td className="border border-gray-300 p-2">11</td>
+                          <td className="border border-gray-300 p-2">拿来</td>
+                          <td className="border border-gray-300 p-2">动作=拿来</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>
+                        <tr>
+                          <td className="border border-gray-300 p-2">12</td>
+                          <td className="border border-gray-300 p-2">两个</td>
+                          <td className="border border-gray-300 p-2">数量(下一个名词)=2</td>
+                          <td className="border border-gray-300 p-2">数量词暂存在门控单元里，等待下一个名词 </td>
+                        </tr>
+                        <tr>
                           <td className="border border-gray-300 p-2">13</td>
                           <td className="border border-gray-300 p-2">苹果(水果)</td>
                           <td className="border border-gray-300 p-2">物品=苹果水果×2</td>
                           <td className="border border-gray-300 p-2">数量词门被打开，数量与名词绑定</td>
+                        </tr> 
+                        <tr>
+                          <td className="border border-gray-300 p-2">14</td>
+                          <td className="border border-gray-300 p-2">半块</td>
+                          <td className="border border-gray-300 p-2">数量(下一个名词)=0.5</td>
+                          <td className="border border-gray-300 p-2"> </td>
                         </tr>
+                        <tr>
+                          <td className="border border-gray-300 p-2">15</td>
+                          <td className="border border-gray-300 p-2">西瓜</td>
+                          <td className="border border-gray-300 p-2">物品=西瓜×0.5</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>
+                        <tr>
+                          <td className="border border-gray-300 p-2">16</td>
+                          <td className="border border-gray-300 p-2">给</td>
+                          <td className="border border-gray-300 p-2">动作=给…</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>
+                        <tr>
+                          <td className="border border-gray-300 p-2">17</td>
+                          <td className="border border-gray-300 p-2">小红</td>
+                          <td className="border border-gray-300 p-2">受赠人=小红</td>
+                          <td className="border border-gray-300 p-2"> </td>
+                        </tr>
+                         <tr>
+                          <td className="border border-gray-300 p-2">18</td>
+                          <td className="border border-gray-300 p-2">弟弟</td>
+                          <td className="border border-gray-300 p-2">受赠人=小红+弟弟</td>
+                          <td className="border border-gray-300 p-2">句子结束，隐藏状态包含几乎全部概要 </td>
+                        </tr>                       
                       </tbody>
                     </table>
                   </div>
@@ -294,8 +372,8 @@ function App() {
                     <ul className="space-y-2 text-sm">
                       <li>• 处理输入信息</li>
                       <li>• 由多层相同结构堆叠而成</li>
-                      <li>• 每层包含两个子层：多头自注意力机制和前馈神经网络</li>
-                      <li>• 每个子层都使用残差连接和层归一化</li>
+                      <li>• 每层包含两个子层：多头自注意力机制和前馈神经网络 (Feed-Forward Network)</li>
+                      <li>• 每个子层都使用残差连接 (Residual Connection) 和 层归一化 (LayerNorm) </li>
                       <li>• 实现全局关联：能同时处理序列中所有元素之间的关系</li>
                     </ul>
                   </div>
@@ -315,7 +393,7 @@ function App() {
               <div className="mb-8">
                 <h4 className="text-xl font-semibold mb-4">d. 自注意力机制（Self-Attention）</h4>
                 <div className="bg-indigo-50 p-6 rounded-lg mb-6">
-                  <p className="mb-4">Transformer通过词嵌入 (Word Embeddings) + 位置编码 (Positional Encoding) -> 让模型知道词序。它将输入序列分别传递给编码器和解码器，编码器和解码器可以同时处理多个序列位置，可以更高效地处理长序列。</p>
+                  <p className="mb-4">Transformer通过词嵌入 (Word Embeddings) + 位置编码 (Positional Encoding) → 让模型知道词序。它将输入序列分别传递给编码器和解码器，编码器和解码器可以同时处理多个序列位置，可以更高效地处理长序列。</p>
                   <p className="mb-4"><strong>注意力机制是Transformer架构的核心，</strong>核心思想是让模型能够像聚光灯一样，有选择地聚焦于输入信息中最相关的部分。</p>
                 </div>
 
@@ -405,7 +483,9 @@ function App() {
                     <p className="text-sm text-gray-600">多层自注意力计算：每层包含多头自注意力机制，使模型能够同时关注不同位置的信息。残差连接与层归一化：确保深层网络的稳定训练。</p>
                   </div>
                   <div>
-                    <img src={image10} alt="层次化处理" className="w-full rounded-lg shadow-sm" />
+                    <img src={image10} alt="层次化处理" className="w-full rounded-lg shadow-sm mb-2" />
+                    <p className="text-sm text-gray-600">Nx Layers = 把“分会 + 汇总”这套流程重复 N 次，层层精炼句子含义，最后输出给下游任务。</p>
+
                   </div>
                 </div>
 
@@ -433,7 +513,7 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-6">3. 大模型参数</h3>
+              <h3 className="text-2xl font-semibold text-blue-600 mb-6">1.3. 大模型参数</h3>
               
               <div className="mb-6">
                 <h4 className="text-xl font-semibold mb-4">a. Token: 语义单元(字母，单词，词根，字，词)</h4>
@@ -464,7 +544,7 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-6">3. 大模型是如何训练的</h3>
+              <h3 className="text-2xl font-semibold text-blue-600 mb-6">1.4. 大模型是如何训练的</h3>
               
               <div className="space-y-8">
                 <div className="bg-yellow-50 p-6 rounded-lg">
@@ -508,7 +588,7 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-6">3. 量化</h3>
+              <h3 className="text-2xl font-semibold text-blue-600 mb-6">1.5. 量化</h3>
               <div className="bg-gray-50 p-6 rounded-lg mb-4">
                 <p className="mb-4">把 32 位或 16 位的所有浮点权重，用更少的比特（8 bit、4 bit、3 bit...）近似存储和计算，从而缩小体积、降低显存并加快推理。量化只影响参数的位宽（精度），但不影响参数的数量。常见 8/6/4/3 bit，bit 越少压缩越狠，但误差风险增大。</p>
                 <p className="italic">例子： 一张5 GB 的照片进行压缩，打印</p>
@@ -516,8 +596,9 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-6">3. 大模型蒸馏（distillation）：</h3>
+              <h3 className="text-2xl font-semibold text-blue-600 mb-6">1.6. 大模型蒸馏（distillation）：</h3>
               <div className="bg-gray-50 p-6 rounded-lg mb-4">
+                <p className="mb-4">通过让模型直接学习其他现有模型的输出分布 (logits / soft labels)，中间特征 (hidden states / attention，如对齐输出 or 输出+隐藏层 or 逐步链式思考轨迹)，关系知识 (relational / contrastive)</p>
                 <p className="mb-4">通过让模型"抄"老师的"过程与答案"，在大幅减小参数和算力的同时，尽量保住脑力与智慧</p>
               </div>
             </div>
@@ -580,7 +661,7 @@ function App() {
 
               <div className="grid lg:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <img src={image16} alt="RAG问题示例" className="w-full rounded-lg shadow-sm" />
+                  <img src={image16} alt="RAG问题示例" className="w-1/2 mx-auto rounded-lg shadow-sm" />
                 </div>
                 <div className="bg-green-50 p-6 rounded-lg">
                   <h4 className="text-xl font-semibold mb-4">RAG技术的核心思想：</h4>
@@ -603,7 +684,7 @@ function App() {
               </div>
 
               <div className="mb-6">
-                <img src={image17} alt="RAG工作流程图" className="w-full max-w-md mx-auto rounded-lg shadow-sm" />
+                <img src={image17} alt="RAG工作流程图" className="w-1/3 mx-auto rounded-lg shadow-sm" />
               </div>
 
               <div className="bg-yellow-50 p-6 rounded-lg">
@@ -658,7 +739,7 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-green-600 mb-6">2.3 如何选择大模型微调还是本地知识库</h3>
+              <h3 className="text-2xl font-semibold text-green-600 mb-6">2.4 如何选择大模型微调还是本地知识库</h3>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-gray-300">
@@ -1094,7 +1175,7 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-orange-600 mb-6">4.1 发展趋势</h3>
+              <h3 className="text-2xl font-semibold text-orange-600 mb-6">4.2 发展趋势</h3>
               
               <div className="space-y-6">
                 <div className="bg-blue-50 p-6 rounded-lg">
@@ -1129,7 +1210,7 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-orange-600 mb-6">4.2 核心挑战</h3>
+              <h3 className="text-2xl font-semibold text-orange-600 mb-6">4.3 核心挑战</h3>
               
               <div className="space-y-6">
                 <div className="bg-red-50 p-6 rounded-lg">
@@ -1177,7 +1258,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
