@@ -169,7 +169,7 @@ function App() {
                 <h4 className="text-xl font-semibold mb-4">a. Word2Vec（Word to vector词向量）</h4>
                 <div className="bg-green-50 p-6 rounded-lg mb-4">
                   <p className="mb-4"><strong>NLP（Natural Language Processing) 关键技术</strong>：</p>
-                  <p className="mb-4">自然语言处理是AI领域的关键技术栈，如何让计算机读懂自然语言，如何用数学来表示词语含义是关键, Word2Vec通过浅层神经网络训练词向量，建立"语义坐标系"。</p>
+                  <p className="mb-4">自然语言处理是AI领域的关键技术栈，计算机如何能读懂自然语言，用数学来表示词语含义是关键。 Word2Vec通过浅层神经网络训练词向量，建立"语义坐标系"。</p>
                 </div>
                 
                 <div className="grid lg:grid-cols-2 gap-6 mb-6">
@@ -211,7 +211,6 @@ function App() {
                 <div className="bg-gray-50 p-6 rounded-lg mb-6">
                   <h5 className="font-semibold mb-4">样例1：</h5>
                   <p className="italic">"小红放学回到家，她妈妈放下了手里的苹果手机，从冰箱里拿来两个苹果和半块西瓜给小红和她弟弟。"</p>
-                  
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-300 text-sm">
                       <thead>
