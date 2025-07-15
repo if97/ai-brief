@@ -163,7 +163,7 @@ function App() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-2xl font-semibold text-blue-600 mb-6">1.2 AI 发展的基石：Transformer与Attention</h3>
+              <h3 className="text-2xl font-semibold text-blue-600 mb-6">1.2 AI (LLM) 发展的核心技术</h3>
               
               <div className="mb-8">
                 <h4 className="text-xl font-semibold mb-4">a. Word2Vec（Word to vector词向量）</h4>
@@ -177,17 +177,30 @@ function App() {
                     <img src={image2} alt="Word2Vec示例" className="w-full rounded-lg shadow-sm" />
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <h5 className="font-semibold mb-3">向量表示示例：</h5>
+                    <h5 className="font-semibold mb-3">One-hot：</h5>
+                    <ul className="space-y-2 font-mono text-sm">
+                      <li>香蕉 = (1 0 0... 0)</li>
+                      <li>猴子 = (0 1 0 ... 0)</li>
+                      <li>苹果 = (0 0 1 ... 0)</li>
+                      <li>飞机 = (0 0 0 0 1 ... 0)</li>
+                    <p className="mt-4 text-sm text-gray-600"></p>
+                      <li> </li>
+                    </ul>
+             
+
+                    <p className="font-semibold mb-3">Word Embedding：</p>
+                    <p className="mt-2 text-sm text-gray-600"> <br/><a href="https://ronxin.github.io/wevi/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://ronxin.github.io/wevi/</a></p>
+                     <p className="mt-4 text-sm text-gray-600"></p>
+                    <h5 className="font-semibold mb-3">词向量表示示例：</h5>
                     <ul className="space-y-2 font-mono text-sm">
                       <li>香蕉 = (1,0,0,0)</li>
                       <li>猴子 = (0,1,2,1)</li>
                       <li>苹果 = (1,0,100,5)</li>
                       <li>飞机 = (0,1000,300,32)</li>
                     </ul>
-                    <p className="mt-4 text-sm text-gray-600"></p>
-                    <p className="mt-4 text-sm text-gray-600">工具链接：</p>
-                    <p className="mt-2 text-sm text-gray-600">Word Embedding  <br/><a href="https://ronxin.github.io/wevi/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://ronxin.github.io/wevi/</a></p>
-                    <p className="mt-4 text-sm text-gray-600">TensorFlow Embedding Projector  <br/><a href="https://projector.tensorflow.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://projector.tensorflow.org/</a></p>
+                      <p className="mt-4 text-sm text-gray-600"></p>           
+                   <p className="mt-4 text-sm text-gray-600">TensorFlow Embedding Projector  <br/><a href="https://projector.tensorflow.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://projector.tensorflow.org/</a></p>
+
                   </div>
                 </div>
               </div>
@@ -211,6 +224,7 @@ function App() {
                 <div className="bg-gray-50 p-6 rounded-lg mb-6">
                   <h5 className="font-semibold mb-4">样例1：</h5>
                   <p className="italic">"小红放学回到家，她妈妈放下了手里的苹果手机，从冰箱里拿来两个苹果和半块西瓜给小红和她弟弟。"</p>
+                <p className="mt-4 text-sm text-gray-600"></p>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-300 text-sm">
                       <thead>
@@ -624,7 +638,7 @@ function App() {
               </div>
 
               <div className="bg-blue-50 p-6 rounded-lg">
-                <h4 className="text-xl font-semibold mb-4">与上述的Vector 和 Transformer 架构中的向量相同点与差异是什么？</h4>
+                <h4 className="text-xl font-semibold mb-4">与上述的 Word2Vec 和 Transformer 架构中的向量相同点与差异是什么？</h4>
                 <div className="grid lg:grid-cols-2 gap-6">
                   <div>
                     <h5 className="font-semibold text-green-600 mb-2">相同点：</h5>
@@ -634,7 +648,7 @@ function App() {
                     <h5 className="font-semibold text-red-600 mb-2">不同点：</h5>
                     <ul className="text-sm space-y-1">
                       <li>• <strong>语义粒度不同</strong>：向量数据库存的是"段落级语义"，模型内部的 Q/K/V 是"逐词、逐层的临时问答条"。</li>
-                      <li>• <strong>生命周期不同</strong>：数据库里的向量通常把整段文本/网页/文档喂进 Encode得到一个 256～1 024 维的"段落向量"，长期驻留在系统中且支持检索；Q/K/V 只在一次前向传播里存在几毫秒，算完即弃。</li>
+                      <li>• <strong>生命周期不同</strong>：数据库里的向量通常把整段文本/网页/文档喂进 Encode得到一个 256～1024 维的"段落向量"，长期驻留在系统中且支持检索；Q/K/V 只在一次前向传播里存在几毫秒，算完即弃。</li>
                     </ul>
                   </div>
                 </div>
@@ -671,14 +685,10 @@ function App() {
               <div className="bg-white p-6 rounded-lg mb-6">
                 <h4 className="text-xl font-semibold mb-4">RAG的工作流程：</h4>
                 <ul className="space-y-2">
-                  <li>• 将查询转换为向量表示</li>
-                  <li>• 从知识库中检索相关信息</li>
-                  <li>• 将检索到的信息与原始查询一起输入到生成模型中</li>
                   <li>• 查询向量化： 将用户问题转换为向量。</li>
                   <li>• 知识库检索： 在向量数据库中搜索与查询向量最相关的文档片段。</li>
                   <li>• 上下文融合： 将检索到的相关片段（作为"证据"）和原始问题一起，组织成提示词（Prompt）输入给LLM。</li>
                   <li>• 生成与优化： LLM基于融合后的上下文生成最终回答，可进行后处理优化。</li>
-                  <li>• 核心优势： 大幅提升回答的准确性、可靠性、可控性，尤其适合需要专业知识或最新信息的场景（如客服、咨询、报告生成）。</li>
                 </ul>
               </div>
 
@@ -692,7 +702,7 @@ function App() {
                   <li>• 数据收集与预处理：从多源获取数据，进行清洗、去重和格式化</li>
                   <li>• 文本分块(Chunking)：将长文本分割成适当大小的块，以便于检索</li>
                   <li>• 向量化 (Embedding)：使用嵌入模型将文本块转换为向量表示</li>
-                  <li>• 索引构建：使用特殊的索引结构(如HNSW、IVF等)组织向量数据</li>
+                  <li>• 索引构建：使用特殊的索引结构组织向量数据</li>
                   <li>• 存储与检索优化：选择合适的向量数据库进行存储，优化检索效率</li>
                 </ul>
               </div>
@@ -814,26 +824,32 @@ function App() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="border border-gray-300 p-3 font-bold">GPT-4.1 / mini / nano</td>
-                        <td className="border border-gray-300 p-3 font-bold">OpenAI</td>
+                        <td className="border border-gray-300 p-3 ">GPT-4.1 / mini / nano</td>
+                        <td className="border border-gray-300 p-3 ">OpenAI</td>
                         <td className="border border-gray-300 p-3">API 商业闭源</td>
                         <td className="border border-gray-300 p-3">文本 + 图像 + 音频</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-3 font-bold">Gemini 2.5 Pro</td>
-                        <td className="border border-gray-300 p-3 font-bold">Google DeepMind</td>
+                        <td className="border border-gray-300 p-3 ">Gemini 2.5 Pro</td>
+                        <td className="border border-gray-300 p-3 ">Google DeepMind</td>
                         <td className="border border-gray-300 p-3">API 商业闭源</td>
                         <td className="border border-gray-300 p-3">原生多模态（文本-音频-图像-视频）</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-3 font-bold">Claude Opus 4 / Sonnet 4</td>
-                        <td className="border border-gray-300 p-3 font-bold">Anthropic</td>
+                        <td className="border border-gray-300 p-3 ">Claude Opus 4 / Sonnet 4</td>
+                        <td className="border border-gray-300 p-3 ">Anthropic</td>
                         <td className="border border-gray-300 p-3">API 商业闭源</td>
                         <td className="border border-gray-300 p-3">文本 +（试验性）图像</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-3 font-bold">Llama 4 (Scout / Maverick)</td>
-                        <td className="border border-gray-300 p-3 font-bold">Meta AI</td>
+                        <td className="border border-gray-300 p-3">Grok 4</td>
+                        <td className="border border-gray-300 p-3">xAI</td>
+                        <td className="border border-gray-300 p-3">API 商业闭源</td>
+                        <td className="border border-gray-300 p-3">文本 + 图像（OCR 强）</td>
+                      </tr>
+                      <tr>                      
+                        <td className="border border-gray-300 p-3 ">Llama 4 (Scout / Maverick)</td>
+                        <td className="border border-gray-300 p-3 ">Meta AI</td>
                         <td className="border border-gray-300 p-3">源码可得，社区许可证</td>
                         <td className="border border-gray-300 p-3">多模态</td>
                       </tr>
@@ -842,12 +858,6 @@ function App() {
                         <td className="border border-gray-300 p-3">Mistral AI</td>
                         <td className="border border-gray-300 p-3">商业 API；部分权重开源</td>
                         <td className="border border-gray-300 p-3">多模态</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 p-3">Grok 3（现行） / Grok 4（即将发布）</td>
-                        <td className="border border-gray-300 p-3">xAI</td>
-                        <td className="border border-gray-300 p-3">API 商业闭源</td>
-                        <td className="border border-gray-300 p-3">文本 + 图像（OCR 强）</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 p-3">Amazon Nova Pro</td>
@@ -886,13 +896,13 @@ function App() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="border border-gray-300 p-3 font-bold">DeepSeek-V3 / R1</td>
+                        <td className="border border-gray-300 p-3 ">DeepSeek-V3 / R1</td>
                         <td className="border border-gray-300 p-3">DeepSeek</td>
                         <td className="border border-gray-300 p-3">权重开放</td>
                         <td className="border border-gray-300 p-3">文本</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-3 font-bold">Qwen 2.5-1M / Omni</td>
+                        <td className="border border-gray-300 p-3 ">Qwen 2.5-1M / Omni</td>
                         <td className="border border-gray-300 p-3">阿里云通义</td>
                         <td className="border border-gray-300 p-3">权重与推理框架开放</td>
                         <td className="border border-gray-300 p-3">文本-图像-音频-视频</td>
@@ -1039,7 +1049,7 @@ function App() {
               <h3 className="text-2xl font-semibold text-purple-600 mb-6">3.3 AI Agent</h3>
               
               <div className="bg-indigo-50 p-6 rounded-lg mb-6">
-                <p>一种能够自主感知环境、制定计划、执行任务，调用工具，并适应变化根据结果继续推理，直到完成任务的智能系统</p>
+                <p>能够自主感知环境、制定计划、执行任务，调用工具，并适应变化根据结果继续推理，直到完成任务的智能系统</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg">
@@ -1056,25 +1066,25 @@ function App() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="border border-gray-300 p-2 font-bold">AutoGPT</td>
+                        <td className="border border-gray-300 p-2 ">AutoGPT</td>
                         <td className="border border-gray-300 p-2">Significant Gravitas（US）</td>
                         <td className="border border-gray-300 p-2">自托管 MIT</td>
                         <td className="border border-gray-300 p-2">Code-first CLI / Web</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-2 font-bold">LangChain Agents</td>
+                        <td className="border border-gray-300 p-2 ">LangChain Agents</td>
                         <td className="border border-gray-300 p-2">LangChain Inc.（US）</td>
                         <td className="border border-gray-300 p-2">自托管 Apache-2.0</td>
                         <td className="border border-gray-300 p-2">Code-first (Python/JS)</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-2 font-bold">CrewAI</td>
+                        <td className="border border-gray-300 p-2 ">CrewAI</td>
                         <td className="border border-gray-300 p-2">crew.ai（US）</td>
                         <td className="border border-gray-300 p-2">云 + 本地双模</td>
                         <td className="border border-gray-300 p-2">Low-code (YAML/SDK)</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-2 font-bold">Dust</td>
+                        <td className="border border-gray-300 p-2 ">Dust</td>
                         <td className="border border-gray-300 p-2">Dust.tt（FR/US）</td>
                         <td className="border border-gray-300 p-2">SaaS / 私有 VPC</td>
                         <td className="border border-gray-300 p-2">可视化画布 + API</td>
@@ -1086,7 +1096,7 @@ function App() {
                         <td className="border border-gray-300 p-2">Code-first REST/SDK</td>
                       </tr>
                       <tr>
-                        <td className="border border-gray-300 p-2 font-bold">Manus</td>
+                        <td className="border border-gray-300 p-2 ">Manus</td>
                         <td className="border border-gray-300 p-2">Monica Pte Ltd（新加坡）</td>
                         <td className="border border-gray-300 p-2">纯 SaaS</td>
                         <td className="border border-gray-300 p-2">自然语</td>
@@ -1143,7 +1153,7 @@ function App() {
               <h3 className="text-2xl font-semibold text-purple-600 mb-6">3.4 MCP协议</h3>
               
               <div className="bg-purple-50 p-6 rounded-lg">
-                <p>MCP(Multi-Agent Collaboration Protocol)协议是一种促进多智能体协作的标准化通信框架，它使不同AI系统能够高效协同工作。在垂直领域应用中，MCP协议通过标准化的消息格式、任务分配机制和状态同步方法，实现了复杂任务的分解与协作处理，大幅提升了AI系统的整体效能。</p>
+                <p>MCP (Multi-Agent Collaboration Protocol) 协议是一种促进多智能体协作的标准化通信框架，它使不同AI系统能够高效协同工作。在垂直领域应用中，MCP协议通过标准化的消息格式、任务分配机制和状态同步方法，实现了复杂任务的分解与协作处理，大幅提升了AI系统的整体效能。</p>
               </div>
             </div>
           </div>
@@ -1159,16 +1169,16 @@ function App() {
               
               <div className="bg-yellow-50 p-6 rounded-lg mb-6">
                 <h4 className="text-xl font-semibold mb-4">"堆参数"时代回顾</h4>
-                <p>2020-2023：各大大模型公司等相继刷榜；大家公开喊出自己的 dense 参数量来展示肌肉，仅靠增加参数性价比迅速走低------训练成本、推理延迟、内存占用都炸表，而质量提升趋于边际收益。</p>
+                <p>2020-2023：各大大模型公司等相继刷榜；大家公开喊出自己的 dense 参数量来展示肌肉，仅靠增加参数性价比迅速走低------训练成本、推理延迟、内存占用都成为各家之痛，而质量提升则趋于边际收益。</p>
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg">
                 <h4 className="text-xl font-semibold mb-4">今天在比什么？</h4>
                 <ul className="space-y-3">
-                  <li>• 稀疏化 & MoE（只激活部分专家），一次只用少量活跃专家，推理成本接近中型模型，却保持超大容量.</li>
-                  <li>• 更长上下文,长上下文能力直接决定能否处理整本书、数小时视频，而跟总参量相关性不大。</li>
+                  <li>• 稀疏化 & MoE（只激活部分专家），一次只用少量活跃专家，推理成本接近中型模型，却保持超大容量</li>
+                  <li>• 更长上下文,长上下文能力直接决定能否处理整本书、数小时视频，而跟总参量相关性不大</li>
                   <li>• 多模态统一，文字+图像+音频推理靠跨模态融合，模型架构与训练方式比参数多少更重要</li>
-                  <li>• 开源高效中型模型，70 B 级别即可达到或逼近 GPT-4 水平，方便私有部署、量化到手机，</li>
+                  <li>• 开源高效中型模型，70 B 级别即可达到或逼近 GPT-4 水平，方便私有部署、量化到手机</li>
                 </ul>
               </div>
             </div>
@@ -1181,18 +1191,18 @@ function App() {
                   <h4 className="text-xl font-semibold mb-4">技术升级：模型架构创新、多模态融合、高效训练/推理。</h4>
                   <ul className="space-y-2">
                     <li>• 工具链更完善：RAG、微调、向量数据库、智能体框架等技术将更易用、更强大，推动AI平民化</li>
-                    <li>• 高效微调：LoRA、适配器调整等微调方法将进一步发展，使模型定制化成本更低。</li>
+                    <li>• 高效微调：LoRA、适配器调整等微调方法将进一步发展，使模型定制化成本更低</li>
                     <li>• 知识增强：RAG等检索增强生成技术将更加成熟，解决大模型的知识时效性和幻觉问题</li>
-                    <li>• 模型架构创新（超越Transformer）、更强大的多模态融合、更高效的训练/推理技术（降低门槛），降低计算资源需求，提高推理速度。</li>
+                    <li>• 模型架构创新：超越Transformer架构，更强大的多模态融合、更高效的训练/推理技术（降低门槛），降低计算资源需求，提高推理速度</li>
                   </ul>
                 </div>
 
                 <div className="bg-green-50 p-6 rounded-lg">
                   <h4 className="text-xl font-semibold mb-4">能力突破：</h4>
                   <ul className="space-y-2">
-                    <li>• 多模态融合：视觉、语言、音频等多种模态的深度融合将成为趋势，使AI系统能够更全面地理解和交互世界。</li>
-                    <li>• 智能体崛起：更能规划、执行复杂任务。</li>
-                    <li>• 随着制度与生态成熟，现有系统 / App 的交互方式将从"点按钮"转向"说需求"，功能像乐高一样组合。</li>
+                    <li>• 多模态融合：视觉、语言、音频等多种模态的深度融合将成为趋势，使AI系统能够更全面地理解和交互世界</li>
+                    <li>• 智能体崛起：更能规划、执行复杂任务</li>
+                    <li>• 随着制度与生态成熟，现有系统 / App 的交互方式将从"点按钮"转向"说需求"，功能像乐高一样组合</li>
                   </ul>
                 </div>
 
@@ -1203,7 +1213,7 @@ function App() {
 
                 <div className="bg-indigo-50 p-6 rounded-lg">
                   <h4 className="text-xl font-semibold mb-4">长远愿景：从ANI（Artificial Narrow Intelligence）通用人工智能AGI（Artificial General Intelligence）</h4>
-                  <p>AGI 通用 AI（AGI，强人工智能）则指具有类似人类通才能力的 AI，可以胜任任何智力任务，灵活适应新情景，自主学习和推理。AGI 的目标是在各个领域都达到人类水平智能.</p>
+                  <p>AGI 通用 AI（AGI，强人工智能）则指具有类似人类通才能力的 AI，可以胜任任何智力任务，灵活适应新情景，自主学习和推理。AGI 的目标是在各个领域都达到人类水平智能。</p>
                 </div>
               </div>
             </div>
@@ -1215,9 +1225,9 @@ function App() {
                 <div className="bg-red-50 p-6 rounded-lg">
                   <h4 className="text-xl font-semibold mb-4">伦理与治理：</h4>
                   <ul className="space-y-2">
-                    <li>• 数据隐私与安全：确保海量训练数据合规，防止泄露滥用，数据污染。</li>
-                    <li>• 算法偏见与公平性：消除模型决策中的歧视和不公。</li>
-                    <li>• 透明度与可解释性：理解AI为何做出特定决策（"黑箱"问题），尤其在关键领域（医疗、司法）。</li>
+                    <li>• 数据隐私与安全：确保海量训练数据合规，防止泄露滥用，数据污染</li>
+                    <li>• 算法偏见与公平性：消除模型决策中的歧视和不公</li>
+                    <li>• 透明度与可解释性：理解AI为何做出特定决策（"黑箱"问题），尤其在关键领域（医疗、司法）</li>
                     <li>• 责任归属：AI出错时，责任如何界定？（开发者？运营者？使用者？）</li>
                   </ul>
                 </div>
@@ -1225,8 +1235,8 @@ function App() {
                 <div className="bg-yellow-50 p-6 rounded-lg">
                   <h4 className="text-xl font-semibold mb-4">技术可靠性：</h4>
                   <ul className="space-y-2">
-                    <li>• 幻觉问题： 虽然RAG缓解，但LLM产生虚假信息风险仍需警惕。</li>
-                    <li>• 数据依赖性： 模型效果高度依赖训练数据质量和多样性。"Garbage in, garbage out"。</li>
+                    <li>• 幻觉问题： 虽然RAG缓解，但LLM产生虚假信息风险仍需警惕</li>
+                    <li>• 数据依赖性： 模型效果高度依赖训练数据质量和多样性。"Garbage in, garbage out"</li>
                   </ul>
                 </div>
 
@@ -1234,9 +1244,9 @@ function App() {
                   <h4 className="text-xl font-semibold mb-4">社会影响：</h4>
                   <ul className="space-y-2">
                     <li>• 产业转型升级：应用导向的AI发展将促使人工智能技术精准对接各产业具体需求，催生智能制造、智慧医疗等新模式新业态</li>
-                    <li>• 就业结构变化：AI技术将替代部分重复性工作，同时创造新的就业机会和职业类型，推动劳动力市场结构性调整, 确保AI技术红利普惠，避免加剧社会不平等。</li>
-                    <li>• 教育模式革新：个性化学习将成为可能，教育资源分配更加均衡，终身学习成为常态。</li>
-                    <li>• 社会治理变革：AI技术将助力社会治理精细化、智能化，提高公共服务效率。</li>
+                    <li>• 就业结构变化：AI技术将替代部分重复性工作，同时创造新的就业机会和职业类型，推动劳动力市场结构性调整, 确保AI技术红利普惠，避免加剧社会不平等</li>
+                    <li>• 教育模式革新：个性化学习将成为可能，教育资源分配更加均衡，终身学习成为常态</li>
+                    <li>• 社会治理变革：AI技术将助力社会治理精细化、智能化，提高公共服务效率</li>
                   </ul>
                 </div>
               </div>
