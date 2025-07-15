@@ -179,9 +179,9 @@ function App() {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h5 className="font-semibold mb-3">One-hot：</h5>
                     <ul className="space-y-2 font-mono text-sm">
-                      <li>香蕉 = (1 0 0... 0)</li>
-                      <li>猴子 = (0 1 0 ... 0)</li>
-                      <li>苹果 = (0 0 1 ... 0)</li>
+                      <li>香蕉 = (1 0 0 0 0 ... 0)</li>
+                      <li>猴子 = (0 1 0 0 0 ... 0)</li>
+                      <li>苹果 = (0 0 1 0 0 ... 0)</li>
                       <li>飞机 = (0 0 0 0 1 ... 0)</li>
                     <p className="mt-4 text-sm text-gray-600"></p>
                       <li> </li>
@@ -423,7 +423,7 @@ function App() {
                     </div>
                     <div className="bg-white p-4 rounded-lg">
                       <h6 className="font-semibold text-purple-600 mb-2">V（Value）</h6>
-                      <p className="text-sm">代表输入内容的各个部分的实际具体表示，"一旦有人决定听我，我要贡献哪段信息？"</p>
+                      <p className="text-sm">代表输入内容的各个部分的实际具体表示，"一旦有人决定听我，我要贡献哪些信息？"</p>
                     </div>
                   </div>
                 </div>
@@ -519,7 +519,7 @@ function App() {
                     <li>• 通过位置编码弥补了自注意力机制无法感知序列位置信息的缺陷；</li>
                     <li>• 通过并行处理序列数据，高效捕捉全局关联；</li>
                     <li>• 通过残差连接和层归一化稳定训练。</li>
-                    <li>• 通过非序列数据处理的架构设计充分发挥了并行计算的效率，极大限度发挥了显卡在AI计算中的能力，促使AI技术发展在近些年的突飞猛进。</li>
+                    <li>• 通过非序列数据处理的架构设计充分发挥了并行计算的效率，极大限度发挥了 GPU 在AI计算中的能力，促使AI技术发展在近些年的突飞猛进。</li>
                   </ul>
                 </div>
               </div>
